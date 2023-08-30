@@ -1,0 +1,16 @@
+{
+  "name": "createuser",
+  "version": "1.0.0",
+  "description": "Create User for Lambda",
+  "main": "createUser.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "mysql2": "^3.6.0",
+    "sequelize": "^6.32.1"
+  }
+}

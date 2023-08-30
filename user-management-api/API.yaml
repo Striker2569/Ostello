@@ -1,0 +1,123 @@
+openapi: 3.0.0
+info:
+  title: User Management API
+  version: 1.0.0
+paths:
+  /api/users:
+    post:
+      summary: Create a new user
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserInput'
+      responses:
+        '201':
+          description: User created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserOutput'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              example:
+                error: Username, email, and password are required.
+  /api/users/{id}:
+    get:
+      summary: Retrieve a user by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: User retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserOutput'
+        '404':
+          description: User not found
+          content:
+            application/json:
+              example:
+                error: User not found
+    put:
+      summary: Update a user's information by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserInput'
+      responses:
+        '200':
+          description: User updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserOutput'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              example:
+                error: Invalid input
+        '404':
+          description: User not found
+          content:
+            application/json:
+              example:
+                error: User not found
+    delete:
+      summary: Delete a user by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: User deleted successfully
+        '404':
+          description: User not found
+          content:
+            application/json:
+              example:
+                error: User not found
+components:
+  schemas:
+    UserInput:
+      type: object
+      properties:
+        username:
+          type: string
+        email:
+          type: string
+        password:
+          type: string
+      required:
+        - username
+        - email
+        - password
+    UserOutput:
+      type: object
+      properties:
+        id:
+          type: string
+        username:
+          type: string
+        email:
+          type: string
