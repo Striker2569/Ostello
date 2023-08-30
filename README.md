@@ -159,5 +159,5 @@ API documentation is available using Swagger UI. Access the documentation at: `[
 
 - Sensitive data is protected.
 - Rate limiting and other security measures are implemented to prevent abuse.
-- 
+
 The architecture diagram behind the idea of the API is also given.
