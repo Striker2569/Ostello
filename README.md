@@ -153,7 +153,7 @@ The API is deployed on AWS Lambda and API Gateway.
 
 ## Documentation
 
-API documentation is available using Swagger UI. Access the documentation at: `[https://api.example.com/docs](https://app.swaggerhub.com/apis/HARSHCHAUHAN123/user-management_api/1.0)`
+API documentation is available using Swagger UI. Access the documentation at: `(https://app.swaggerhub.com/apis/HARSHCHAUHAN123/user-management_api/1.0)`
 
 ## Security Considerations
 
